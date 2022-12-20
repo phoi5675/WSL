@@ -1,0 +1,42 @@
+[user]
+	useConfigOnly = true
+	name = 강민재/연구원/ID전략솔루션Project(minijae2.kang@lge.com)
+	email = minijae2.kang@lge.com
+
+# Cache credentials
+[credential]
+	helper = cache --timeout 7200
+
+[commit]
+	template = .gitmessage
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+    co = checkout
+    rb = rebase -i
+    st = status
+    cm = commit
+    pl = pull
+    ps = push
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
+    ad = add
+    tg = tag -n
+    df = diff
+    br = branch
+
+# each folder uses different gitconfig file
+# [includeIf "gitdir/i:./bitbucket/"]
+# 	path = ./bitbucket/.gitconfig
+
+# [includeIf "gitdir/i:./github/"]
+# 	path = ./github/.gitconfig
+
+[core]
+	excludesFile = ./.gitignore_global
+	autocrlf = input	# fix unmodified files shown as modified in ubuntu
+	editor = vim
