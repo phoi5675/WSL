@@ -1,5 +1,3 @@
-# Install Outline
+# Install wikis
 
-```bash
-sudo -E bash install_outline.sh
-```
+- [outline](./instructions/outline.md)

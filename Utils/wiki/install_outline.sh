@@ -29,6 +29,7 @@ cp .env.sample .env
 sed -i 's/user:pass/postgres:postgres/' .env
 sed -i "s/SECRET\_KEY=.*/SECRET\_KEY=$(openssl rand -hex 32)/" .env
 sed -i "s/UTILS\_SECRET=.*/UTILS\_SECRET=$(openssl rand -hex 32)/" .env
+sed -i 's/FORCE\_HTTPS=.*/FORCE\_HTTPS=false/' .env
 
 # Set database
 yarn sequelize db:create --env=production-ssl-disabled
