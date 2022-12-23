@@ -17,3 +17,7 @@
    1. Edit username in action in task scheduler if needed
 3. After setup, go to `Administration/Storage` and enable `Local File System`
    1. Set Path to export markdown files
+
+## References
+
+- [Setup nginx reverse proxy for wikijs](https://docs-legacy.requarks.io/wiki/admin-guide/setup-nginx)

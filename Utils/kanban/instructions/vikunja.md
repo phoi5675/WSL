@@ -20,6 +20,8 @@ echo 'cd /opt/vikunja && /usr/bin/vikunja &' > nohup.sh
 - edit /etc/vikunja/config.yml
   - database to `postgres`
   - timezone to `ROK`
+  - interface
+    - If you don't want to change interface, use [nginx reverse proxy](https://vikunja.io/docs/reverse-proxy/)
 - add xml file to task scheduler
 
 ## Additional setup
