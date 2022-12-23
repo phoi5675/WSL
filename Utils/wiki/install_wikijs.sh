@@ -23,7 +23,7 @@ sudo su -c "psql -c \"ALTER USER wikijs WITH PASSWORD 'wikijsrocks'\"" postgres
 popd
 
 cat >nohup.sh <<EOF
-source ~/.zshrc
+. ~/.nvm/nvm.sh
 nvm use lts/gallium
 cd wiki && node server &
 EOF
