@@ -101,3 +101,4 @@ default=${생성한 사용자 이름}
 - [intel iGPU setup](https://www.intel.com/content/www/us/en/artificial-intelligence/harness-the-power-of-intel-igpu-on-your-machine.html)
 - [이전 버전 WSL의 수동 설치 단계(Microsoft 공식 페이지)](https://learn.microsoft.com/ko-kr/windows/wsl/install-manual)
 - [Download linux distros manually](https://learn.microsoft.com/ko-kr/windows/wsl/install-manual#downloading-distributions)
+- [Access WSL2 file of one distro from another](https://superuser.com/questions/1659218/is-there-a-way-to-access-files-from-one-wsl-2-distro-image-in-another-one)
