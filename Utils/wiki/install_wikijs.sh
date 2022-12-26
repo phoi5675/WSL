@@ -23,7 +23,9 @@ sudo su -c "psql -c \"ALTER USER wikijs WITH PASSWORD 'wikijsrocks'\"" postgres
 popd
 
 cat >nohup.sh <<EOF
-source ~/.nvm/nvm.sh
+export NVM_DIR=${HOME}/.nvm
+echo "Started at $(date)"
+. ${NVM_DIR}/nvm.sh
 nvm use lts/gallium
 cd wiki && node server &
 EOF

@@ -13,7 +13,10 @@
 - run command below @ ~
 
 ```bash
-echo 'cd /opt/vikunja && /usr/bin/vikunja &' > nohup.sh
+cat >nohup.sh<<EOF
+echo "Started at $(date)"
+cd /opt/vikunja && /usr/bin/vikunja &
+EOF
 ```
 
 - install postgresql, nginx
