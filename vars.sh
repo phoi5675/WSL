@@ -37,7 +37,7 @@ readonly INST_KOR_FONT=1
 # Versions
 readonly VER_OPEN_JDK=11
 readonly VER_NODEJS=lts
-readonly VER_PY3=3.11
+readonly VER_PY3=3.9
 
 # Folders
 readonly CONFIG="$(pwd)/config"
