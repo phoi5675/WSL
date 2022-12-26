@@ -17,10 +17,7 @@ Created user : ${USERNAME}\\
 }
 
 change_user_prompt() {
-    # FIXME: statement not working even if enter 'Y', 'y', or 'n'.
-    # Change user to created one.
-    read -p "Do you want to login as ${USERNAME}? [Y/n]" SELECT
-    if [[ ${SELECT} -eq "Y" ]] || [[ ${SELECT} -eq "y" ]]; then
+    if [[ ${SELECT} = "Y" ]] || [[ ${SELECT} = "y" ]] || [[ -z ${SELECT} ]]; then
         su -l ${USERNAME}
         exit 0
     else
