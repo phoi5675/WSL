@@ -2,8 +2,15 @@
 # Powershell script to setup remainders on windwos and run ubuntu-setup script
 #
 
-Write-host "Downloading wsl_update_x64.msi..."
-curl.exe -L -o wsl_update_x64.msi ` 
+Write-Host "Install Terminal..." `
+    -ForegroundColor Green
+curl.exe -L -o terminal.msixbundle `
+    https://github.com/microsoft/terminal/releases/download/v1.15.3465.0/Microsoft.WindowsTerminal_Win10_1.15.3465.0_8wekyb3d8bbwe.msixbundle
+Add-AppxPackage -Path ./terminal.msixbundle
+
+Write-host "Downloading wsl_update_x64.msi..." `
+    -ForegroundColor Green
+curl.exe -L -o wsl_update_x64.msi `
     https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 
 Write-host "Installing Linux kernel package..." -ForegroundColor Green
@@ -11,11 +18,11 @@ Write-host "Installing Linux kernel package..." -ForegroundColor Green
 
 wsl --set-default-version 2
 
-Write-Host "Downloading Ubuntu.appx..."
-curl.exe -L -o ubuntu.appx `
-    https://aka.ms/wslubuntu
-Write-Host "Install ubuntu.appx..."
-Add-AppxPackage .\app_name.appx
+# Write-Host "Downloading Ubuntu.appx..."
+# curl.exe -L -o ubuntu.appx `
+#     https://aka.ms/wslubuntu
+# Write-Host "Install ubuntu.appx..."
+# Add-AppxPackage .\ubuntu.appx
 
 Write-host "Downloading Ubuntu package..."
 Write-host "You can download other images at https://cloud-images.ubuntu.com/wsl/" `
