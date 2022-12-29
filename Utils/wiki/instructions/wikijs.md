@@ -18,6 +18,19 @@
 3. After setup, go to `Administration/Storage` and enable `Local File System`
    1. Set Path to export markdown files
 
+## Additional setup
+
+- PlantUML
+
+  - [plantuml repo](https://github.com/plantuml/plantuml-server)
+  - Set plantuml port to 8081
+  - replace `https://plantuml.requarks.io` to `http://localhost:8081/plantuml` in wiki before executing `node server`
+  - append below in `nohup.sh` in Distro `Backend`
+
+    ```bash
+    cd /home/phoi/plantuml-server && mvn jetty:run -Djetty.http.port=8081 &
+    ```
+
 ## References
 
 - [Setup nginx reverse proxy for wikijs](https://docs-legacy.requarks.io/wiki/admin-guide/setup-nginx)
