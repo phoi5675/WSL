@@ -79,3 +79,16 @@ EOF
         echo "Skip setup zsh..."
     fi
 }
+
+set_created_user_to_default() {
+    read -p "Set ${USERNAME} as default user when wsl starts? [Y/n] " PROMPT
+
+    if [[ ${PROMPT} = "Y" ]] || [[ ${PROMPT} = "y" ]] || [[ -z ${PROMPT} ]]; then
+        touch /etc/wsl.conf
+        cat >/etc/wsl.conf <<EOF
+[user]
+default=${USERNAME}
+EOF
+    fi
+
+}

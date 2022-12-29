@@ -5,8 +5,7 @@ vars.sh의 값 수정해서 원하는 패키지만 설치 가능
 
 ## 설치하는 패키지
 
-- nvm
-- nodejs
+- nvm / nodejs
 - java
 - build-essentials
 - zsh / oh-my-zsh
@@ -15,13 +14,22 @@ vars.sh의 값 수정해서 원하는 패키지만 설치 가능
 
 ## How to run
 
-### 1. 윈도우에서 WSL, Ubuntu 한 번에 설치(아직 테스트되지 않음)
+### 1. 윈도우에서 WSL, Ubuntu 한 번에 설치
 
 Windows에서 스크립트를 관리자 권한으로 실행
 
-1. `.\windows_presiquite.ps1` 실행 이후 재부팅
+1. `.\windows_presiquite.ps1` 실행
+
+   ```bash
+   ./windows_presiquite.ps1
+   ```
+
 1. `.\windows_wsl.ps1` 실행  
-   `windows_wsl.ps1`의 경우, ubuntu 설정 스크립트도 진행하므로 따로 `ubnutu.sh` 실행 불필요
+   `windows_wsl.ps1`의 경우, ubuntu 설정 스크립트도 포함됨
+
+   ```bash
+   ./windows_presiquite.ps1
+   ```
 
 ### 2. 우분투만 별도로 설정
 
@@ -43,6 +51,9 @@ bash로 실행(**sh로는 불가능!**)
    ```
 
 ## Additional Setups
+
+모두 각각 `windows_wsl.ps1`, `ubuntu.sh`에 포함됨  
+별도로 설정 불필요
 
 ### Windows
 
