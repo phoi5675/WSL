@@ -225,6 +225,13 @@ prompt_virtualenv() {
   fi
 }
 
+# Node: show current node version
+prompt_node() {
+  if [[ -n "$(node --version)" ]]; then
+    prompt_segment green white "$(node --version)"
+  fi
+}
+
 # Status:
 # - was there an error
 # - am I root
@@ -257,6 +264,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
+  prompt_node
   prompt_aws
   prompt_context
   prompt_dir
