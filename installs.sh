@@ -1,25 +1,25 @@
 #!/bin/bash
 inst_build_essentials() {
-    sudo apt-get install build-essential -qq >/dev/null
+    sudo apt-get install build-essential ${LOG_LVL}
 }
 
 inst_python2() {
-    sudo apt-get install python2 -y -qq >/dev/null
+    sudo apt-get install python2 -y ${LOG_LVL}
 }
 
 inst_python3() {
     printf "Installing python %s\n" ${VER_PY3}
     sudo add-apt-repository ppa:deadsnakes/ppa -y
-    sudo apt-get update -qq >/dev/null
-    sudo apt-get install python"${VER_PY3}" -qq >/dev/null
+    sudo apt-get update ${LOG_LVL}
+    sudo apt-get install python"${VER_PY3}" ${LOG_LVL}
 }
 
 inst_git() {
-    sudo apt-get install git -qq >/dev/null
+    sudo apt-get install git ${LOG_LVL}
 }
 
 inst_java() {
-    sudo apt-get install openjdk-${VER_OPEN_JDK}-jdk -qq >/dev/null
+    sudo apt-get install openjdk-${VER_OPEN_JDK}-jdk ${LOG_LVL}
 
     # Add $PATH and $JAVA_PATH to ${HOME}/."${SHELL}"rc
     echo "" >>"${HOME}"/."${SHELL}"rc # To make a new line
@@ -32,7 +32,7 @@ inst_java() {
 
 inst_nodejs() {
     # Install nvm
-    sudo apt-get install curl -qq >/dev/null
+    sudo apt-get install curl ${LOG_LVL}
     curl --no-progress-meter -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh |
         bash
 
@@ -48,6 +48,6 @@ inst_nodejs() {
 }
 
 inst_kor_font() {
-    sudo apt-get update -qq >/dev/null
-    sudo apt-get install fonts-nanum -qq >/dev/null
+    sudo apt-get update ${LOG_LVL}
+    sudo apt-get install fonts-nanum ${LOG_LVL}
 }

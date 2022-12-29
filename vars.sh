@@ -42,3 +42,6 @@ readonly VER_PY3=3.9
 
 # Folders
 readonly CONFIG="$(pwd)/config"
+
+# Miscs
+readonly LOG_LVL="-q"

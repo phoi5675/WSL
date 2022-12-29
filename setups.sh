@@ -1,7 +1,7 @@
 #!/bin/bash
 set_mirror_to_kakao() {
     echo "Change apt server to kakao..."
-    sudo sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
+    sudo sed -i 's/\(kr\.\)\{0,1\}archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
     sudo apt-get update -q >/dev/null
 }
 
@@ -44,7 +44,7 @@ set_zsh() {
     if [[ "$SHELL" -eq "$ZSH" ]]; then
         echo "Install Oh-my-zsh..."
         sudo apt-get update -q >/dev/null
-        sudo apt-get install zsh -qq >/dev/null
+        sudo apt-get install zsh ${LOG_LVL} >/dev/null
 
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         cat >>~/."${BASH}"rc <<EOF
