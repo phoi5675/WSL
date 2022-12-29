@@ -7,6 +7,10 @@ tar xzf wiki-js.tar.gz -C ./wiki
 pushd ./wiki
 mv config.sample.yml config.yml
 
+# Change ID / PW in config
+sed -i 's/user: .\+/user: postgres/' config.yml
+sed -i 's/pass: .\+/pass: postgres/' config.yml
+
 # Install nodejs 16.X
 nvm install lts/gallium && nvm use lts/gallium
 
