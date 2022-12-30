@@ -44,7 +44,7 @@ set_zsh() {
     if [[ "$SHELL" -eq "$ZSH" ]]; then
         echo "Install Oh-my-zsh..."
         sudo apt-get update -q >/dev/null
-        sudo apt-get install zsh ${LOG_LVL} >/dev/null
+        sudo apt-get install zsh ${LOG_LVL} -y >/dev/null
 
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         cat >>~/."${BASH}"rc <<EOF
