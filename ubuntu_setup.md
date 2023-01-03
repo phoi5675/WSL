@@ -1,7 +1,6 @@
 # Ubuntu setup script
 
-우분투에서의 개발 환경을 자동으로 설정해 주는 스크립트  
-vars.sh의 값 수정해서 원하는 패키지만 설치 가능
+우분투에서의 개발 환경을 자동으로 설정해 주는 스크립트
 
 ## 설치하는 패키지
 
@@ -14,9 +13,15 @@ vars.sh의 값 수정해서 원하는 패키지만 설치 가능
 
 ## How to run
 
+### Presiquite
+
+1. 필요한 경우, `vars.sh` 수정
+   1. 설치 여부(0 / 1)
+   2. 설치 버전
+
 ### 1. 윈도우에서 WSL, Ubuntu 한 번에 설치
 
-Windows에서 스크립트를 관리자 권한으로 실행
+Windows Powershell에서 스크립트를 관리자 권한으로 실행
 
 1. `.\windows_presiquite.ps1` 실행
 
@@ -35,8 +40,7 @@ Windows에서 스크립트를 관리자 권한으로 실행
 
 bash로 실행(**sh로는 불가능!**)
 
-1. repository 복사 및 `Automation/WSL`로 이동
-1. script 실행
+1. repo의 script 실행
 
    - non-root user
 
@@ -51,6 +55,9 @@ bash로 실행(**sh로는 불가능!**)
    ```
 
 ## Additional Setups
+
+<details>
+   <summary>Deprecated</summary>
 
 모두 각각 `windows_wsl.ps1`, `ubuntu.sh`에 포함됨  
 별도로 설정 불필요
@@ -83,6 +90,8 @@ fonts/ 내부의 폰트 설치 후, [터미널](https://github.com/microsoft/ter
 default=${생성한 사용자 이름}
 ```
 
+</details>
+
 ## Customization
 
 아래의 과정으로 원하는 스크립트를 함수 형태로 추가 가능  
@@ -92,13 +101,6 @@ default=${생성한 사용자 이름}
    1. set\_${prefix_name} : 환경 설정
    2. inst\_${prefix_name} : 패키지 설치
 2. ubuntu.sh에 원하는 함수 추가(all lowercases)
-
-## 주의사항
-
-- 설치 켜기 / 끄기는 vars.sh에, 폴더 등 상세 커스터마이징은 각 함수에 존재
-- Windows의 Network drive에서 작업하는 경우, `--no-bin-links` arg 추가 필요.(WSL1)  
-  symlink 관련 `OperationThe operation was rejected by your operating system.` 오류 발생  
-  -> WSL 실행시 예기치 않은 오류 발생할 수 있으므로 권장하지는 않음
 
 ## 기타
 
