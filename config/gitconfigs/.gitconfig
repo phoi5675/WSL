@@ -18,6 +18,7 @@
 
 [alias]
     co = checkout
+	sw = switch
     rb = rebase -i
     st = status
     cm = commit
