@@ -29,7 +29,6 @@ popd
 cat >nohup.sh <<EOF
 export NVM_DIR=${HOME}/.nvm
 echo "Started at $(date)"
-. ${NVM_DIR}/nvm.sh
-nvm use lts/gallium
-cd wiki && npm run start &
+. ${NVM_DIR}/nvm.sh && nvm use lts/gallium \
+&& cd wiki && npm run start &
 EOF
