@@ -8,13 +8,14 @@
 input_username() {
     printf "Type username you want to setup.\n"
     printf "If user not exists, this script will create a user.\n"
+    sleep 0.5
     read -p "Username : " USERNAME
 
     if id ${USERNAME} &>/dev/null; then
         echo "${USERNAME} already exists. Skip creating user..."
     else
         read -p "Your name(Optional, leave blank if you want to) : " NAME
-        sudo useradd -m ${USERNAME} -c ${NAME:=""} -s /bin/bash
+        sudo useradd -m ${USERNAME} -c ${NAME:=${USERNAME}} -s /bin/bash
 
         sudo passwd ${USERNAME}
         echo "Create user ${USERNAME}..."
