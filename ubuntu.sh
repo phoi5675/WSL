@@ -14,7 +14,9 @@ input_username() {
         echo "${USERNAME} already exists. Skip creating user..."
     else
         read -p "Your name(Optional, leave blank if you want to) : " NAME
-        sudo useradd -m ${USERNAME} -c ${NAME} -s /bin/bash
+        if [[ -n ${NAME} ]]; then
+            sudo useradd -m ${USERNAME} -c ${NAME} -s /bin/bash
+        fi
         sudo passwd ${USERNAME}
         echo "Create user ${USERNAME}..."
 
