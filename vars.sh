@@ -19,6 +19,7 @@ readonly SHELL=${ZSH}
 PATH=$(cat /etc/environment) # Default ${PATH} in ubuntu(debian)
 
 # Set-ups
+readonly SET_TIMEZONE=1
 readonly SET_MIRROR_TO_KAKAO=1
 readonly SET_SHELL_PROMPT=1
 readonly SET_VIM=1

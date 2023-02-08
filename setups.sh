@@ -1,4 +1,9 @@
 #!/bin/bash
+
+set_timezone() {
+    sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+}
+
 set_mirror_to_kakao() {
     echo "Change apt server to kakao..."
     sudo sed -i 's/\(kr\.\)\{0,1\}archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
