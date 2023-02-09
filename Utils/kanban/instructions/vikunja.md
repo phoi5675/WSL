@@ -20,8 +20,11 @@ EOF
 ```
 
 - install postgresql, nginx
+- create user and database in psql
 - edit /etc/vikunja/config.yml
-  - database to `postgres`
+  - database
+    - type to `postgres`
+    - set user, password, database
   - timezone to `ROK`
   - interface
     - If you don't want to change interface, use [nginx reverse proxy](https://vikunja.io/docs/reverse-proxy/)
