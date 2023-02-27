@@ -227,7 +227,7 @@ prompt_virtualenv() {
 
 # Node: show current node version
 prompt_node() {
-  if [[ -n "$(type node >/dev/null)" ]]; then
+  if command -v node &>/dev/null; then
     prompt_segment green white "$(node --version)"
   fi
 }
