@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set_timezone() {
-    sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+    sudo ln -s --force /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 }
 
 set_mirror_to_kakao() {
