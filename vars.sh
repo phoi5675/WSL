@@ -46,3 +46,4 @@ readonly CONFIG="$(pwd)/config"
 
 # Miscs
 readonly LOG_LVL="-q"
+readonly TIMEZONE="Etc/UTC" # Alternative : "Asia/Seoul". See /usr/share/zoneinfo
