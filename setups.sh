@@ -18,7 +18,7 @@ set_shell_prompt() {
 
 set_vim() {
     echo "Add vim settings from ${CONFIG}/.vimrc..."
-    touch .vimrc && cat "${CONFIG}"/.vimrc >>"${HOME}"/.vimrc
+    cat "${CONFIG}"/.vimrc >>"${HOME}"/.vimrc
 }
 
 set_gitconfig() {
