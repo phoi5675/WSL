@@ -32,13 +32,13 @@ readonly INST_BUILD_ESSENTIALS=1
 readonly INST_PYTHON2=1
 readonly INST_PYTHON3=1
 readonly INST_GIT=1
-readonly INST_JAVA=1
+readonly INST_JAVA=0    # java openjdk 11 is not commercially free, hence disabled
 readonly INST_NODEJS=1
 readonly INST_KOR_FONT=1
 
 # Versions
 readonly VER_OPEN_JDK=11
-readonly VER_NODEJS=lts
+readonly VER_NODEJS=16
 readonly VER_PY3=3.9
 
 # Folders
