@@ -74,7 +74,8 @@ main() {
     printf "\n\nInstallation completed!\n"
 
     echo "Fix permission..."
-    sudo chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
+    sudo chown -R ${USERNAME} /home/${USERNAME}
+    sudo chgrp -R ${USERNAME} /home/${USERNAME}
 }
 
 readonly LOGFILE="setup_script_result.log"
