@@ -25,7 +25,7 @@ readonly SET_SHELL_PROMPT=1
 readonly SET_VIM=1
 readonly SET_GITCONFIG=1
 readonly SET_ZSH=1
-readonly SET_CREATED_USER_TO_DEFAULT=1
+readonly SET_CREATED_USER_TO_DEFAULT=0 # Applies to WSL only
 
 # ISNT_* : Install * (0 -> 1 to install package)
 readonly INST_BUILD_ESSENTIALS=1
