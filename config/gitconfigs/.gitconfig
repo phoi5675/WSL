@@ -45,3 +45,5 @@
 	defaultBranch = main
 [pager]
 	branch = false
+[pull]
+	rebase = false
