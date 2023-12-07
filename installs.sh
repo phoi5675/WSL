@@ -3,6 +3,11 @@ inst_build_essentials() {
     sudo apt-get install build-essential ${LOG_LVL} -y
 }
 
+inst_ssh_server() {
+    sudo apt-get install openssh-server
+    sudo service ssh start # starts openssh server
+}
+
 inst_python2() {
     sudo apt-get install python2 -y ${LOG_LVL}
 }

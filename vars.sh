@@ -29,10 +29,11 @@ readonly SET_CREATED_USER_TO_DEFAULT=0 # Applies to WSL only
 
 # ISNT_* : Install * (0 -> 1 to install package)
 readonly INST_BUILD_ESSENTIALS=1
+readonly INST_SSH_SERVER=1
 readonly INST_PYTHON2=1
 readonly INST_PYTHON3=1
 readonly INST_GIT=1
-readonly INST_JAVA=0    # java openjdk 11 is not commercially free, hence disabled
+readonly INST_JAVA=0 # java openjdk 11 is not commercially free, so installing java is disabled by default
 readonly INST_NODEJS=1
 readonly INST_KOR_FONT=1
 
