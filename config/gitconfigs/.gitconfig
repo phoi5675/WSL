@@ -47,3 +47,5 @@
   branch = false
 [pull]
   rebase = false
+[merge]
+  ff = no
