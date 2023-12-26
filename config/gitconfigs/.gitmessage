@@ -1,9 +1,6 @@
-[ticketNo][bugfix|new|etc]
+# To see types of conventional commits, visit https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/
+[feat]
 
-:Detail Notes:
+-
 
-:Test Result:
-NA
-
-:Issues Addressed:
-NA
+Related Link: NA
