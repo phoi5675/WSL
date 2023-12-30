@@ -1,17 +1,28 @@
 # Ubuntu setup script
 
-우분투에서의 개발 환경을 자동으로 설정해 주는 스크립트
-
-**스크립트를 한 번만 실행해 주세요. 두 번 이상 실행하는 경우, config 파일 오류가 발생할 수 있습니다**
+우분투에서의 개발 환경을 자동으로 설정해 주는 스크립트  
+_스크립트를 한 번만 실행해 주세요. 두 번 이상 실행하는 경우, config 파일 오류가 발생할 수 있습니다_
 
 ## 설치하는 패키지
 
-- nvm / nodejs
-- java
 - build-essentials
-- zsh / oh-my-zsh
+- openssh-server
 - python2
 - python3
+- git
+- openjdk
+- nvm / nodejs
+- fonts-nanum
+- docker-cli
+- zsh / oh-my-zsh
+
+## 설정 변경
+
+- 시간대(기본값: UTC)
+- apt 서버 변경(카카오 서버)
+- shell prompt
+- vim
+- git config
 
 ## How to run
 
@@ -102,7 +113,7 @@ default=${생성한 사용자 이름}
 1. vars.sh에 원하는 변수 추가(all uppercases) 및 1(켜짐)로 값 할당
    1. set\_${prefix_name} : 환경 설정
    2. inst\_${prefix_name} : 패키지 설치
-2. ubuntu.sh에 원하는 함수 추가(all lowercases)
+2. `set_` 함수인 경우 `setups.sh`에, `inst_`함수인 경우 `installs.sh`에 원하는 함수 추가(all lowercases)
 
 ## 기타
 
