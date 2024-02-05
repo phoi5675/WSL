@@ -51,7 +51,7 @@ set_zsh() {
         sudo apt-get update -q >/dev/null
         sudo apt-get install zsh ${LOG_LVL} -y >/dev/null
 
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ""
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         cat >>~/."${BASH}"rc <<EOF
 
 # Exec zsh on vscode
