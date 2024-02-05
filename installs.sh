@@ -4,7 +4,7 @@ inst_build_essentials() {
 }
 
 inst_ssh_server() {
-    sudo apt-get install openssh-server
+    sudo apt-get install openssh-server -y
     sudo service ssh start # starts openssh server
 }
 
