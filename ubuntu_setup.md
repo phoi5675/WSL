@@ -26,7 +26,7 @@ _스크립트를 한 번만 실행해 주세요. 두 번 이상 실행하는 경
 
 ## How to run
 
-### Presiquite
+### Prerequisite
 
 1. 필요한 경우, `vars.sh` 수정
    1. 설치 여부(0 / 1)
