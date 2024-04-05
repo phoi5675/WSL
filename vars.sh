@@ -38,6 +38,7 @@ readonly INST_NODEJS=1           # Install node using nvm
 readonly INST_KOR_FONT=1         # Install fonts-nanum to support korean
 readonly INST_POWERLINE_FONT=1   # Install powerline fonts for oh-my-zsh in desktop environment
 readonly INST_DOCKER_CLI=0       # Install docker-cli
+readonly INST_XRDP=0             # Install xrdp(remote desktop server for ubuntu)
 
 # Versions
 readonly VER_OPEN_JDK=11

@@ -87,3 +87,23 @@ inst_docker_cli() {
     echo "Install docker-cli..."
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin ${LOG_LVL} -y
 }
+
+inst_xrdp() {
+    # If ubuntu-desktop is not installed, abort installing xrdp
+    sudo dpkg -l | grep ubuntu-desktop
+    if [[ "$?" -ne 0 ]]; then
+        echo "ubuntu-desktop is not installed. skipping xrdp installation..."
+        return 1
+    fi
+
+    sudo apt-get update ${LOG_LVL}
+    sudo apt-get install xrdp ${LOG_LVL} -y
+    sudo systemctl enable xrdp
+
+    # Use same desktop envrionment as locally logged in
+    cat <<EOF >~/.xsessionrc
+export GNOME_SHELL_SESSION_MODE=ubuntu
+export XDG_CURRENT_DESKTOP=ubuntu:GNOME
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+EOF
+}
