@@ -57,6 +57,11 @@ inst_kor_font() {
     sudo apt-get install fonts-nanum ${LOG_LVL} -y
 }
 
+inst_powerline_font() {
+    sudo apt-get update ${LOG_LVL}
+    sudo apt-get install fonts-powerline ${LOG_LVL} -y
+}
+
 inst_docker_cli() {
     # Script from docker official doc
     # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository

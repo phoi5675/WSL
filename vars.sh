@@ -36,6 +36,7 @@ readonly INST_GIT=1              # Install git
 readonly INST_JAVA=1             # Install openjdk
 readonly INST_NODEJS=1           # Install node using nvm
 readonly INST_KOR_FONT=1         # Install fonts-nanum to support korean
+readonly INST_POWERLINE_FONT=1   # Install powerline fonts for oh-my-zsh in desktop environment
 readonly INST_DOCKER_CLI=0       # Install docker-cli
 
 # Versions

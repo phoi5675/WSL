@@ -31,11 +31,11 @@
   br = branch
 
 # each folder uses different gitconfig file
-# [includeIf "gitdir/i:./bitbucket/"]
-# 	path = ./bitbucket/.gitconfig
+# [includeIf "gitdir/i:~/bitbucket/"]
+# 	path = ~/bitbucket/.gitconfig
 
-# [includeIf "gitdir/i:./github/"]
-# 	path = ./github/.gitconfig
+[includeIf "gitdir/i:~/github_public/"]
+	path = ~/github_public/.gitconfig
 
 [core]
   excludesFile = ./.gitignore_global
