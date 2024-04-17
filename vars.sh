@@ -19,13 +19,14 @@ readonly SHELL=${ZSH}
 PATH=$(cat /etc/environment) # Default ${PATH} in ubuntu(debian)
 
 # Set-ups
-readonly SET_TIMEZONE=1                # Set timezone specified by ${TIMEZONE}
-readonly SET_MIRROR_TO_KAKAO=1         # Set apt server to kakao, which is faster than default korea mirror server
-readonly SET_SHELL_PROMPT=1            # Set shell prompt. See ~/config/.bash_config or .zsh_config
-readonly SET_VIM=1                     # Set syntax and hightlight setting. See ~/config/.vimrc
-readonly SET_GITCONFIG=1               # Set git config and git message. See ~/config/gitconfigs/.gitconfig and .gitmessage
-readonly SET_ZSH=1                     # Install and set oh-my-zsh and use custom theme
-readonly SET_CREATED_USER_TO_DEFAULT=0 # Set a created user while this script running as a default user when WSL starts. Applies to WSL only
+readonly SET_TIMEZONE=1                       # Set timezone specified by ${TIMEZONE}
+readonly SET_MIRROR_TO_KAKAO=1                # Set apt server to kakao, which is faster than default korea mirror server
+readonly SET_SHELL_PROMPT=1                   # Set shell prompt. See ~/config/.bash_config or .zsh_config
+readonly SET_VIM=1                            # Set syntax and hightlight setting. See ~/config/.vimrc
+readonly SET_GITCONFIG=1                      # Set git config and git message. See ~/config/gitconfigs/.gitconfig and .gitmessage
+readonly SET_ZSH=1                            # Install and set oh-my-zsh and use custom theme
+readonly SET_CREATED_USER_TO_DEFAULT=0        # Set a created user while this script running as a default user when WSL starts. Applies to WSL only
+readonly SET_OPEN_SESSION_CONNECTED_VIA_SSH=1 # Open a screen session when connecting server via ssh
 
 # ISNT_* : Install * (0 -> 1 to install package)
 readonly INST_BUILD_ESSENTIALS=1 # Install build-essentials package in ubuntu

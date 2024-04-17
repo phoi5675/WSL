@@ -97,3 +97,34 @@ EOF
     fi
 
 }
+
+set_open_session_connected_via_ssh() {
+    echo "Check screen exists..."
+    which screen
+
+    if [[ $? -ne 0 ]]; then
+        echo "screen not found. installing screen..."
+        sudo apt-get update && sudo apt-get install screen ${LOG_LVL} -y
+    fi
+
+    READ_PROMPT='read -p "Launch default screen? [Y/n] " -n 1 -r'
+
+    # read -p doesn't work in zsh
+    if [[ "$SHELL" -eq "$ZSH" ]]; then
+        READ_PROMPT='read "REPLY?Launch default screen? [Y/n] "'
+    fi
+
+    cat >>~/."$SHELL"rc <<EOF
+
+# Prompt to load screen when connecting to this server via ssh
+if [[ -n \$SSH_CONNECTION ]] && [[ -z \$PROMPTED ]] && [[ -z \$STY ]]; then
+    echo ""
+    $READ_PROMPT
+    if [[ \$REPLY =~ ^[Yy]$ || \$REPLY == "" ]]; then
+        screen -RS scr
+    fi
+    export PROMPTED=1
+fi
+EOF
+
+}
