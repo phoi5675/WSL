@@ -26,7 +26,7 @@ readonly SET_VIM=1                            # Set syntax and hightlight settin
 readonly SET_GITCONFIG=1                      # Set git config and git message. See ~/config/gitconfigs/.gitconfig and .gitmessage
 readonly SET_ZSH=1                            # Install and set oh-my-zsh and use custom theme
 readonly SET_CREATED_USER_TO_DEFAULT=0        # Set a created user while this script running as a default user when WSL starts. Applies to WSL only
-readonly SET_OPEN_SESSION_CONNECTED_VIA_SSH=1 # Open a screen session when connecting server via ssh
+readonly SET_OPEN_SESSION_CONNECTED_VIA_SSH=0 # Open a screen session when connecting server via ssh
 
 # ISNT_* : Install * (0 -> 1 to install package)
 readonly INST_BUILD_ESSENTIALS=1 # Install build-essentials package in ubuntu
