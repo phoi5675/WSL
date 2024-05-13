@@ -107,22 +107,24 @@ set_open_session_connected_via_ssh() {
         sudo apt-get update && sudo apt-get install screen ${LOG_LVL} -y
     fi
 
-    READ_PROMPT='read -n 1 -r'
+    READ_COMMAND='read -n 1 -r'
+    READ_PROMPT='"\nLaunch default screen? [\${GREEN}Y\${NO_COLOR}/n] "'
 
     # read -p doesn't work in zsh
     if [[ "$SHELL" -eq "$ZSH" ]]; then
-        READ_PROMPT='read "REPLY?Launch default screen? [Y/n] "'
+        READ_COMMAND='read "REPLY?Launch default screen? [Y/n] "'
+        READ_PROMPT=''
     fi
 
     cat >>~/."$SHELL"rc <<EOF
 
 # Prompt to load screen when connecting to this server via ssh
-if [[ -n \$SSH_CONNECTION ]] && [[ -z \$PROMPTED ]] && [[ -z \$STY ]]; then
+if [[ -n \$SSH_CONNECTION ]] && [[ -z \$PROMPTED ]] && [[ -z \$STY ]] && [[ -n \$LC_SSH ]]; then
     GREEN='\033[0;32m'
     NO_COLOR='\033[0m'
 
-    printf "\nLaunch default screen? [\${GREEN}Y\${NO_COLOR}/n] "
-    $READ_PROMPT
+    printf $READ_PROMPT
+    $READ_COMMAND
     echo ""
     if [[ \$REPLY =~ ^[Yy]\$ ]] || [[ "\$(printf "%d" "'\$REPLY")" -eq 10 ]]; then
         SESSION_NAME="\${USER}_scr"

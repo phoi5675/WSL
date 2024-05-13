@@ -1,7 +1,8 @@
 # Ubuntu setup script
 
 우분투에서의 개발 환경을 자동으로 설정해 주는 스크립트  
-_스크립트를 한 번만 실행해 주세요. 두 번 이상 실행하는 경우, config 파일 오류가 발생할 수 있습니다_
+_스크립트를 한 번만 실행해 주세요. 두 번 이상 실행하는 경우, config 파일 오류가
+발생할 수 있습니다_
 
 ## 설치하는 패키지
 
@@ -91,7 +92,8 @@ swap=0
 
 - (Optional)Oh-my-zsh 사용시
 
-fonts/ 내부의 폰트 설치 후, [터미널](https://github.com/microsoft/terminal)에서 해당 폰트로 폰트 설정
+fonts/ 내부의 폰트 설치 후, [터미널](https://github.com/microsoft/terminal)에서
+해당 폰트로 폰트 설정
 
 ### Linux(Ubuntu)
 
@@ -113,11 +115,21 @@ default=${생성한 사용자 이름}
 1. vars.sh에 원하는 변수 추가(all uppercases) 및 1(켜짐)로 값 할당
    1. set\_${prefix_name} : 환경 설정
    2. inst\_${prefix_name} : 패키지 설치
-2. `set_` 함수인 경우 `setups.sh`에, `inst_`함수인 경우 `installs.sh`에 원하는 함수 추가(all lowercases)
+2. `set_` 함수인 경우 `setups.sh`에, `inst_`함수인 경우 `installs.sh`에 원하는함
+   수 추가(all lowercases)
 
 ## 기타
 
 이 스크립트는 생성한 유저에 대해 sudo 권한 추가함
+
+## `SET_OPEN_SESSION_CONNECTED_VIA_SSH=1`로 설정한 경우의 추가 설정
+
+ssh로 세션 접속 시, screen을 띄우는 prompt가 나오게 하려면 다음과 같이
+`LC_SSH`값을 추가해야 함
+
+```bash
+LC_SSH=1 ssh user@server -o SendEnv=LC_SSH
+```
 
 ## References
 
