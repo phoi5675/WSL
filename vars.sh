@@ -16,7 +16,7 @@ readonly BASH='bash'
 readonly SHELL=${ZSH}
 
 # Default environments
-PATH=$(cat /etc/environment) # Default ${PATH} in ubuntu(debian)
+PATH=$(echo $PATH) # Default ${PATH} in ubuntu(debian)
 
 # Set-ups
 readonly SET_TIMEZONE=1                       # Set timezone specified by ${TIMEZONE}
