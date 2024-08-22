@@ -38,7 +38,7 @@
 	path = ~/github_public/.gitconfig
 
 [core]
-  excludesFile = ./.gitignore_global
+  excludesFile = ~/.gitignore_global
   autocrlf = input	# fix unmodified files shown as modified in ubuntu
   editor = vim
 [init]
